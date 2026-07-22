@@ -1,12 +1,20 @@
+#include <WiFiS3.h>
 #include <DHT.h> // DHT sensor library by Adafruit
 #include <RTClib.h>  // RTClib by Adafruit
  
-RTC_DS3231 rtc;
+char ssid[] = "YOUR_WIFI_NAME";
+char pass[] = "YOUR_WIFI_PASSWORD";
+
+// IP address of the SECOND Uno R4
+char server[] = "192.168.1.50";
+
+WiFiClient client;
  
 #define DHTPIN 2
 #define DHTTYPE DHT11
  
 DHT dht(DHTPIN, DHTTYPE);
+RTC_DS3231 rtc;
 const int ldrPin = A0;
  
 void setup()
@@ -61,7 +69,6 @@ void loop()
     Serial.print(now.second());
  
     Serial.println();
- 
  
  
     Serial.print("Temperature: ");
