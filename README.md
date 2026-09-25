@@ -1,7 +1,8 @@
 # Weather Station
 
-
 Small project to learn Arduino and MQTT.
+
+:warning: This repo is not yet up to date with final report. 
 
 ## Specs
 
